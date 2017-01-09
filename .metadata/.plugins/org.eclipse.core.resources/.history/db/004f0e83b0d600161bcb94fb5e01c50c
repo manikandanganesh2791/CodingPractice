@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class ChunkedPal {
+	public static int chunkedpali(String inp_palindrome){
+		ArrayList<String> wordgrp = new ArrayList<String>();
+		int result = 0;
+		int word_count = 1;
+		boolean flag = true;
+		while(flag == true){
+			flag = false;
+			if(word_count < inp_palindrome.length()){
+				if(inp_palindrome.substring(word_count, inp_palindrome.length()).contains(inp_palindrome.substring(0,word_count))){
+					flag = true;
+					word_count++;
+				}
+				else if(word_count > 1){
+					flag = true;
+					wordgrp.add(inp_palindrome.substring(0,word_count-1));
+					inp_palindrome = inp_palindrome.substring(word_count - 1, inp_palindrome.length() - word_count + 1);
+					word_count = 1;
+					result = 2 * wordgrp.size();
+				}	
+			}
+		}
+		return result;
+	}
+	@SuppressWarnings("resource")
+	public static void main(String [] args){
+		Scanner input_string = new Scanner(System.in);
+		System.out.println("Enter string:");
+		String input_palindrome = input_string.next();
+		int longest_val = chunkedpali(input_palindrome);
+		System.out.println("The value of longest string is: " + longest_val);
+	}
+}

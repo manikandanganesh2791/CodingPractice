@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class ChunkedPal {
+	public static int chunkedpali(String inp_palindrome){
+		int result = 0;
+		int length_val = 1;
+		if(inp_palindrome.length() > 1){
+			if(inp_palindrome.substring(0,length_val).equals)
+		}
+		return result;
+	}
+	public static void main(String [] args){
+		Scanner input_string = new Scanner(System.in);
+		String input_palindrome = input_string.next();
+		int longest_val = chunkedpali(input_palindrome);
+	}
+}
