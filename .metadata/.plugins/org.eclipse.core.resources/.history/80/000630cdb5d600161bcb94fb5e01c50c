@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class OneCharacterStringDiff {
+	public static int compareString(String input_string, String[] input_array){
+		int result = 0;
+		
+		return result;
+	}
+	public static void main(String [] args){
+		Scanner user_input = new Scanner(System.in);
+		System.out.println("Enter a string to be tested with array");
+		String input_string = user_input.next();
+		String[] input_array = new String[]{"babbasf", "agasgag", "bananb", "bababa", "banaba"};
+		int output_value = compareString(input_string, input_array);
+		System.out.println("Number of matched values: " + output_value);
+	}
+}

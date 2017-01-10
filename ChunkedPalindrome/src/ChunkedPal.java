@@ -15,23 +15,25 @@ public class ChunkedPal {
 					word_count++;
 				}
 				else if(word_count > 2){
-					flag = true;
-					wordgrp.add(inp_palindrome.substring(0,word_count-1));
-					result = 2 * wordgrp.size();
-					remaining_value = inp_palindrome.length()/2;
-					if(word_count-1 < remaining_value+1){
-						if(word_count != remaining_value+1){
-							inp_palindrome = inp_palindrome.substring(word_count-1, inp_palindrome.length() - (word_count - 1));
-							word_count = 1;
+					if(inp_palindrome.substring(0, word_count-1).equals(inp_palindrome.substring(inp_palindrome.length()-(word_count-1),inp_palindrome.length()))){
+						flag = true;
+						wordgrp.add(inp_palindrome.substring(0,word_count-1));
+						result = 2 * wordgrp.size();
+						remaining_value = inp_palindrome.length()/2;
+						if(word_count-1 < remaining_value+1){
+							if(word_count != remaining_value+1){
+								inp_palindrome = inp_palindrome.substring(word_count-1, inp_palindrome.length() - (word_count - 1));
+								word_count = 1;
+							}
+							else{
+								wordgrp.add(inp_palindrome.substring(word_count-1, remaining_value+1));
+								result+=1;
+								flag = false;
+							}
 						}
-						else{
-							wordgrp.add(inp_palindrome.substring(word_count-1, remaining_value+1));
-							result+=1;
+						else if(word_count -1 == remaining_value){
 							flag = false;
-						}
-					}
-					else if(word_count -1 == remaining_value){
-						flag = false;
+						}	
 					}
 				}
 				else if(wordgrp.size()>0){

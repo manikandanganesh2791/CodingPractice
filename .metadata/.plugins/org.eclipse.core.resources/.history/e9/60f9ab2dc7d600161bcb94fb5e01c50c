@@ -1,0 +1,7 @@
+public class StringPattern {
+	public static void main(String [] args){
+		String[] pattern_array = new String[]{"a", "b", "b", "a"};
+		String check_string = "";
+		
+	}
+}

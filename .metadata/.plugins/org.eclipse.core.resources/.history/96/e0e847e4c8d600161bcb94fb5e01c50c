@@ -1,0 +1,23 @@
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+public class StringPattern {
+	public static boolean patternCheck(String[] pat_arr, String check_str){
+		boolean result = false;
+		Map<Integer, List<Integer>> pattern_groups = new HashMap<Integer, List<Integer>>();
+		for(int i=0; i<pat_arr.length - 1; i++){
+			for(int j=i+1; j<pat_arr.length; j++){
+				if(pat_arr[i].equals(pat_arr[j])){
+					pattern_groups.add(i,
+				}
+			}
+		}
+		return result;
+	}
+	public static void main(String [] args){
+		String[] pattern_array = new String[]{"a", "b", "b", "a"};
+		String check_string = "dog cat cat dog";
+		boolean output_result = patternCheck(pattern_array, check_string);
+		System.out.println("Is the pattern matching with the given array? :" + output_result);
+	}
+}
